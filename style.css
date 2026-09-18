@@ -8,47 +8,50 @@ body {
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .left-mountain {
-  width: 300px;
-  height: 300px;
+  width: min(300px, 40vw);
+  height: min(300px, 40vw);
   background: linear-gradient(rgb(203, 241, 228), rgb(80, 183, 255));
   position: absolute;
   transform: skew(0deg, 44deg);
   z-index: 2;
-  margin-top: 100px;
+  top: 20vh;
+  left: -50px;
 }
 
 .back-mountain {
-  width: 300px;
-  height: 300px;
+  width: min(300px, 40vw);
+  height: min(300px, 40vw);
   background: linear-gradient(rgb(203, 241, 228), rgb(47, 170, 255));
   position: absolute;
   z-index: 1;
   transform: rotate(45deg);
-  left: 110px;
-  top: 225px;
+  left: 15vw;
+  top: 35vh;
 }
 
 .sun {
-  width: 200px;
-  height: 200px;
+  width: min(200px, 25vw);
+  height: min(200px, 25vw);
   background-color: yellow;
   position: absolute;
   border-radius: 50%;
-  top: -75px;
-  right: -75px;
+  top: -5vw;
+  right: -5vw;
 }
 
 .penguin {
-  width: 300px;
-  height: 300px;
-  margin: auto;
-  margin-top: 75px;
+  width: clamp(200px, 40vw, 300px);
+  height: clamp(200px, 40vw, 300px);
   z-index: 4;
   position: relative;
   transition: transform 1s ease-in-out 0ms;
@@ -59,7 +62,7 @@ body {
 }
 
 .penguin:active {
-  transform: scale(1.5);
+  transform: scale(1.3);
   cursor: not-allowed;
 }
 
@@ -162,17 +165,18 @@ body {
 }
 
 .shirt {
-  font: bold 25px Helvetica, sans-serif;
-  top: 165px;
-  left: 127.5px;
+  font: bold clamp(16px, 3vw, 25px) Helvetica, sans-serif;
+  top: 55%;
+  left: 42%;
   z-index: 1;
   color: #6a6969;
 }
 
 .shirt div {
   font-weight: initial;
-  top: 22.5px;
-  left: 12px;
+  font-size: 0.8em;
+  top: 90%;
+  left: -10%;
 }
 
 .penguin-body {
@@ -263,9 +267,10 @@ body {
 
 .ground {
   width: 100vw;
-  height: 400px;
+  height: 35vh;
   background: linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255));
   z-index: 3;
   position: absolute;
-  margin-top: -58px;
+  bottom: 0;
+  left: 0;
 }
